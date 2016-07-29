@@ -11,13 +11,14 @@ def get_restaurant_urls(url)
   end
 end
 
-  # search.css(".sresult").each do |item|
-  #   sukajan = Sukajan.new(item.css(".gvtitle h3").text.delete "\n" "\r" "\t")
-  #   sukajan.profile_url = item.css(".gvtitle h3 a").attribute("href").value
-  #   sukajan.calculate_shipping(sukajan, item)
-  #   sukajan.bin_or_auction(sukajan, item)
-  #   all << sukajan
-
-def get_menu_items(restaurant_url)
-  
+def get_menu_items
+  item = {}
+  menu_page = Nokogiri::HTML(open("http://www.menupages.com/restaurants/Acqua-at-peck-slip/menu")).css("div#restaurant-menu table")
+  menu_page.css("tr").each do |item|
+    item[:name] = item.css("th cite").text
+    item[:ingredients] = item.css("th").text
+    price = item.css("td").text.delete "\n" "\r" " " " "
+    item[:price] = price[-5..-1]
+    item[:restaurant] = "restaurant name"
+  end
 end
