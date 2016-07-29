@@ -34,66 +34,25 @@ module Helpers
 	  Smoothies-Juices
 	  Sushi
 	  Asian
-	  Barbecue
 	  Healthy
 	  Desserts
 	  Thai
 	  Vegetarian
 	  Breakfast
-	  Tex-Mex
-	  Pub-Food
 	  Indian
 	  Bar-Food
 	  Lunch-Specials
 	  Mediterranean
 	  Middle-Eastern
-	  Latin-American
 	  French
 	  Vietnamese
-	  Greek
 	  Cocktails
 	  Korean
 	  Southern
 	  Tapas
-	  Grill
 	  LocalOrganic
-	  Caribbean
-	  South-American
 	  AsianFusion
-	  Soul-Food
-	  Californian
-	  Eclectic
-	  Spanish
-	  Irish
-	  Vegan
-	  Kosher
-	  Alcohol
-	  Cajun-Creole
-	  Southwestern
-	  Cuban
-	  Calzones
-	  Jamaican
 	  Teahouses
-	  Hoagies
-	  Gastropub
-	  Bistro
-	  Kids-Menu
-	  Hawaiian
-	  Peruvian
-	  Puerto-Rican
 	  Dim-Sum
-	  German
-	  EasternEuropean
-	  Turkish
-	  Brazilian
-	  Central-American
-	  Late-Night
-	  African
-	  Pakistani
-	  Ethiopian
-	  Argentinean
-	  Russian
-	  Nuevo-Latino
-	  Filipino
   )
 end
