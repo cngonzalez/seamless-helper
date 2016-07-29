@@ -1,0 +1,29 @@
+
+<div id="user-page" class="row">
+	<div class="center-page">
+		<div class="warning">
+			<% if flash.has?(:message) %>
+				<h3>Error</h3>
+			  <%= flash[:message] %>
+			<% end %>
+		</div>
+		<br>
+		
+		<h2>Sign up</h2>
+		<br>
+		<form action="/signup" method="post">
+			<div class="form-group">
+		  <div class="form-group">
+		    <label>Username:</label>
+		    <input type="text" class="form-control" id="username" placeholder="Username" name="user[username]">
+		  </div>
+
+		  <div class="form-group">
+		    <label>Password:</label>
+		    <input type="password" class="form-control" id="password" placeholder="Password" name="user[password]">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Sign up</button>
+		</form>
+
+	</div>
+</div>
