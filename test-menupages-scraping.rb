@@ -3,10 +3,11 @@ require 'nokogiri'
 require 'open-uri'
 
 def get_restaurant_urls(url)
-  [] = restuarant_urls
-  search = Nokogiri::HTML(open("http://www.menupages.com/restaurants/soho-trbca-findist/all-neighborhoods/all-cuisines/"))
+  restaurant_urls = []
+  search = Nokogiri::HTML(open(url))
   search.css("table#my-search-results .link").each do |item|
-    puts item.attribute("href").value
+    url = "http://www.menupages.com#{item.attribute("href").value}menu"
+    restaurant_urls << url
   end
 end
 
@@ -17,6 +18,6 @@ end
   #   sukajan.bin_or_auction(sukajan, item)
   #   all << sukajan
 
-get_menu_items(menu_page)
-[] = menu_items
-menu
+def get_menu_items(restaurant_url)
+  
+end
