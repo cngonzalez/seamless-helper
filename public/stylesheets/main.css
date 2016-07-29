@@ -23,6 +23,19 @@ li#right {
   float:right; 
 }
 
+
+.center-page {
+  margin-top: 0;
+  margin-left: 40%;
+  margin-right: 40%;
+  z-index: 0;
+}
+
+.warning {
+  position: fixed;
+  left: 10%;
+  top: 10%;
+
 .categories {
   width: 20%;
   height: 100%;
@@ -36,4 +49,5 @@ li#right {
 }
 div > input {
   padding: 5px;
+
 }
