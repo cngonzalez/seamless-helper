@@ -12,7 +12,7 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'rack-flash3'
-gem 'active_support/inflector'
+gem 'activesupport'
 
 group :test do
   gem 'rspec'
