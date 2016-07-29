@@ -6,7 +6,6 @@ def get_restaurant_urls(url)
   restaurant_urls = []
   search = Nokogiri::HTML(open(url))
   search.css("table#my-search-results .link").each do |item|
-    binding.pry
     url = "http://www.menupages.com#{item.attribute("href").value}menu"
     restaurant_urls << url
   end

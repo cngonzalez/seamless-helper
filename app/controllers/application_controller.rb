@@ -11,12 +11,8 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  get '/index' do
-    erb :search
-  end
-
-  post '/index' do
+  post '/search' do
     binding.pry
-  end 
+  end
 
 end

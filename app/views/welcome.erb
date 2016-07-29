@@ -4,14 +4,14 @@
   <div class="categories">
     <label><strong>Category</strong></label><br>
     <% CATEGORIES.each do |category| %>
-      <input type="checkbox" value="<%= category %>"><%= category %></input>
+      <input type="checkbox" name="category[]" value="<%= category %>"><%= category %></input>
     <% end %>
   </div>
   <label><strong>Cuisine</strong></label><br>
-  <div class="cuisine">
-    <% CUISINE.each do |cuisine| %>
-      <input type="checkbox" value="<%= cuisine %>"><%= cuisine %></input>
-    <% end %>
-  </div>
+
+  <% CUISINE.each do |cuisine| %>
+  <input type="checkbox" name="cuisine[]" value="<%=cuisine%>">
+  <%=cuisine%> <br>
+  <%end%>
   <input type="submit" value="submit">
 </form>
