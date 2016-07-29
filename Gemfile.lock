@@ -106,6 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 4.2, >= 4.2.6)
+  activesupport
   bcrypt
   capybara
   pry

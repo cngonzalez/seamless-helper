@@ -1,7 +1,7 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-require 'active_support/inflector'
+# require 'activesupport/inflector'
 
 def get_restaurants(url)
   restaurants = []
@@ -37,9 +37,11 @@ def parse_search_url(params)
     category_restaurants.each do |restaurant|
       dishes = get_menu_items(restaurant)
       dishes.each do |dish|
-        if dish.name.include?(singularize(category)) || dish.ingredients.include?(singularize(category))
-          all_dishes << dish
-          binding.pry
+        unless dish.name.nil? || dish.ingredients.nil?
+          if dish.ingredients.include?(category) || dish.name.include?(category)
+            all_dishes << dish
+            binding.pry
+          end
         end
       end
     end
