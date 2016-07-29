@@ -12,13 +12,18 @@ def get_restaurant_urls(url)
 end
 
 def get_menu_items
-  item = {}
+  items = []
   menu_page = Nokogiri::HTML(open("http://www.menupages.com/restaurants/Acqua-at-peck-slip/menu")).css("div#restaurant-menu table")
   menu_page.css("tr").each do |item|
-    item[:name] = item.css("th cite").text
-    item[:ingredients] = item.css("th").text
+    my_item = {}
+    my_item[:name] = item.css("th cite").text
+    my_item[:ingredients] = item.css("th").text
     price = item.css("td").text.delete "\n" "\r" " " " "
-    item[:price] = price[-5..-1]
-    item[:restaurant] = "restaurant name"
+    my_item[:price] = price[-5..-1]
+    my_item[:restaurant] = "restaurant name"
+    items << my_item
   end
+  items 
 end
+
+puts get_menu_items
