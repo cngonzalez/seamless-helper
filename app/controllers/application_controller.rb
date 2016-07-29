@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
 
   post '/search' do
     parse_search_url(params)
-    binding.pry
+
   end
 
   get '/results' do
