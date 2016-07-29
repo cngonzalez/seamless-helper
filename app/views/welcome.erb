@@ -5,13 +5,13 @@
     <label><strong>Category</strong></label><br>
     <% CATEGORIES.each do |category| %>
 
-	    <input type="checkbox" name="category" value="<%= category %>"><%= category %></input><br>
+	    <input type="checkbox" name="category[]" value="<%= category %>"><%= category %></input><br>
     <% end %>
   </div>
   <label><strong>Cuisine</strong></label><br>
   <div class="cuisine">
     <% CUISINE.each do |cuisine| %>
-	    <input type="checkbox" name="cuisine" value="<%= cuisine %>"><%= cuisine %></input><br>
+	    <input type="checkbox" name="cuisine[]" value="<%= cuisine %>"><%= cuisine %></input><br>
     <% end %>
   </div>
   <input type="text" name="search" placeholder="Enter search terms..."><br>
