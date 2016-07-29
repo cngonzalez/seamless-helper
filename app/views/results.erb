@@ -1,0 +1,17 @@
+
+Your dish today is going to be:
+<% result = @dishes.sample %>
+<%= result.name %>
+<%= result.ingredients %>
+<%= result.price %>
+<%= result.restaurant.url %>
+
+Or you can choose from below:
+
+<%@dishes.each do |result| %>
+<%= result.name %>
+<%= result.ingredients %>
+<%= result.price %>
+<%= result.restaurant.url %>
+<hr>
+<%end%>

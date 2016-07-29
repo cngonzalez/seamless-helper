@@ -1,5 +1,7 @@
 require './config/environment'
 
+@@results = []
+
 class ApplicationController < Sinatra::Base
   include Helpers
   configure do
@@ -16,12 +18,13 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/search' do
-    parse_search_url(params)
-
+    $results = parse_search_url(params)
+    redirect '/results'
   end
 
   get '/results' do
-    File.open("something" "w")
+    @dishes = Dish.all
+    erb :results
   end
 
 end

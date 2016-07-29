@@ -13,7 +13,7 @@ def get_restaurants(url)
   restaurants
 end
 
-def get_menu_items(restaurant)
+def get_menu_items(restaurant, category)
   dishes = []
   menu_page = Nokogiri::HTML(open(restaurant.url))
   menu_page.css("tr").each do |item|
@@ -23,6 +23,7 @@ def get_menu_items(restaurant)
     price = item.css("td").text.delete "\n" "\r" " " " "
     dish.price = price[-5..-1]
     dish.restaurant_id = restaurant.id
+    dish.search = category
     dish.save
     dishes << dish
   end
@@ -34,9 +35,9 @@ def parse_search_url(params)
   params[:category].each do |category|
     category = category.gsub("-", " ").downcase
     category_restaurants = get_restaurants("http://www.menupages.com/restaurants/soho-trbca-findist/all-neighborhoods/#{category}")
-    category_restaurants.each do |restaurant|
+    category_restaurants[0..2].each do |restaurant|
       begin
-        dishes = get_menu_items(restaurant)
+        dishes = get_menu_items(restaurant, category)
         dishes.each do |dish|
         unless dish.name.nil? || dish.ingredients.nil?
           if dish.ingredients.include?(category) || dish.name.include?(category)
