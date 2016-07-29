@@ -41,6 +41,11 @@ li#right {
   height: 100%;
   float: left;
   padding: 2em;
+  display: float;
+}
+.cuisine {
+  height:100%;
+  float: left;
 }
 div > input {
   padding: 5px;
