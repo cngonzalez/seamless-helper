@@ -11,7 +11,7 @@ def get_restaurant_urls(url)
   end
 end
 
-def get_menu_items
+def get_menu_items(restaurant)
   items = []
   menu_page = Nokogiri::HTML(open("http://www.menupages.com/restaurants/Acqua-at-peck-slip/menu")).css("div#restaurant-menu table")
   menu_page.css("tr").each do |item|
@@ -26,7 +26,9 @@ def get_menu_items
   items
 end
 
-def parse_search_url(search_term)
-  ##likely this method should be paired with something that sanitizes/compares against the search terms raycent has compiled
-  url = "http://http://www.menupages.com/restaurants/soho-trbca-findist/all-neighborhoods/#{search_term}"
+def parse_search_url(params)
+  params[:category].each do |category|
+  category_restaurants = get_restaurant_urls("http://www.menupages.com/restaurants/soho-trbca-findist/all-neighborhoods/#{category}")
+  category_restaurants.each do |restaurant|
+    items = get_menu_items(restuarant)
 end

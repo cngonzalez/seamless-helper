@@ -12,7 +12,12 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/search' do
+    parse_search_url(params)
     binding.pry
+  end
+
+  get '/results' do
+    File.open("something" "w")
   end
 
 end
