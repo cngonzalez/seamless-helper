@@ -4,14 +4,9 @@ require 'rack-flash'
 class UsersController < ApplicationController
 
 	get '/login' do 
-    	@login_active = true
-    
 		erb :'/users/login'
 	end
 
-	after '/login' do
-	    @login_active = false
-	end
 
 	post '/login' do 
 		user_params = params[:user]
@@ -64,7 +59,6 @@ class UsersController < ApplicationController
 
 	get '/logout' do 
 		session[:user_id] = nil
-		@logged_in = false
 		redirect '/'
 	end
 end

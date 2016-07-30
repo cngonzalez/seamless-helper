@@ -1,0 +1,17 @@
+<div class="center-page">
+	<h1>My Favorites</h1>
+	<hr>
+	<br>
+	<% @favorites.each do |favorite| %>
+		<div id="favorite">
+			<div class="row">
+				<div class="dishes-name col-md-8"><%= favorite.name %></div>
+				<a class="btn btn-danger btn-xs col-md-4" href="/favorite/<%= favorite.id %>/delete">Delete</a>
+			</div>
+			<hr>
+			<div class="row">
+				<%= favorite.integredients.join(", ") %>
+			</div>
+		</div>
+	<% end %>
+</div>

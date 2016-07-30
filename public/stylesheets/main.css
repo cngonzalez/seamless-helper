@@ -51,3 +51,11 @@ div > input {
   padding: 5px;
 
 }
+
+#favorite {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    box-shadow: 10px 10px 5px #888888;
+}
+
