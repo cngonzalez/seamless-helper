@@ -1,6 +1,6 @@
 require './config/environment'
 
-@@results = []
+@@search = ""
 
 class ApplicationController < Sinatra::Base
   include Helpers
@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
       if session[:user_id].nil? || User.find_by(id:session[:user_id]).nil?
         flash[:message] = "Please log in first."
         session[:user_id] = nil
-        redirect '/login' 
+        redirect '/login'
       end
     end
   end
@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/search' do
-    $results = parse_search_url(params)
+    scrape_search_url(params)
     redirect '/results'
   end
 

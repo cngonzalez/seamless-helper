@@ -1,17 +1,22 @@
 
 Your dish today is going to be:
 <% result = @dishes.sample %>
-<%= result.name %>
-<%= result.ingredients %>
-<%= result.price %>
-<%= result.restaurant.url %>
+<%= result.name %> <br>
+<%= result.ingredients %> <br>
+<%= result.price %> <br>
+<a href="<%= result.restaurant.url %>">Visit this restaurant's page.<br>
+
+<hr> 
 
 Or you can choose from below:
-
+<li>
 <%@dishes.each do |result| %>
-<%= result.name %>
-<%= result.ingredients %>
-<%= result.price %>
-<%= result.restaurant.url %>
+<ul>
+<%= result.name %> <br>
+<%= result.ingredients %> <br>
+<%= result.price %> <br>
+<a href="<%= result.restaurant.url %>">Visit this restaurant's page.<br>
+</ul>
 <hr>
 <%end%>
+</li>
